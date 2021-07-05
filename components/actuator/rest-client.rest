@@ -1,0 +1,17 @@
+### Get the status
+GET http://{{host}}:{{port}}/
+Accept: application/json
+
+### Get the containers list
+GET http://{{host}}:{{port}}/containers
+Accept: application/json
+
+### Post a container request
+POST http://{{host}}:{{port}}/containers/32f6387ee25a
+Content-Type: application/json
+
+{
+   "cpu_quota": 100000
+}
+
+###

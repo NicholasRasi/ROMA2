@@ -1,0 +1,8 @@
+flask
+flask-cors
+PyYAML
+requests
+gunicorn
+coloredlogs
+psycopg2
+sqlalchemy

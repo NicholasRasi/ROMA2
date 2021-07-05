@@ -1,0 +1,26 @@
+version: "3"
+services:
+  containers_manager:
+    image: sodaliteh2020/nodemanager_containers_manager
+    ports:
+      - "5001:5001"
+  requests_store:
+    image: sodaliteh2020/nodemanager_requests_store
+    ports:
+      - "5002:5002"
+  controller:
+    image: sodaliteh2020/nodemanager_controller
+    ports:
+      - "5003:5003"
+  dispatcher:
+    image: sodaliteh2020/nodemanager_dispatcher
+    ports:
+      - "8000:8000"
+  orchestrator:
+    image: sodaliteh2020/nodemanager_orchestrator
+    ports:
+      - "5000:5000"
+  dashboard:
+    image: sodaliteh2020/nodemanager_dashboard
+    ports:
+      - "8080:8080"

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TF Controlled Dashboard</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css">
+
+    <style>
+        .container {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="h3 mt-4">Status <button type="button" class="btn btn-primary" onclick="refreshStatus()">Refresh</button></div>
+            <div class="row">
+                <div class="col-2">
+                    Orchestrator <p id="orchestrator-status">?</p>
+                </div>
+                <div class="col-2">
+                    Containers Manager <p id="containers-manager-status">?</p>
+                </div>
+                <div class="col-2">
+                    Request Store <p id="requests-store-status">?</p>
+                </div>
+                <div class="col-2">
+                    Controller <p id="controller-status">?</p>
+                </div>
+                <div class="col-2">
+                    Dispatcher <p id="dispatcher-status">?</p>
+                </div>
+            </div>
+
+            <div class="h3 mt-4">Configuration <button type="button" class="btn btn-primary" onclick="refreshConfiguration()">Refresh</button></div>
+            <div class="row">
+                <div class="col-4">
+                    <h5>TF Serving</h5>
+                    <textarea class="w-100" id="tfs-config" style="height: 300px"></textarea>
+                </div>
+                <div class="col-4">
+                    <h5>K8s Deployment</h5>
+                    <textarea class="w-100" id="k8s-deployment" style="height: 300px"></textarea>
+                </div>
+                <div class="col-4">
+                    <h5>K8s Service</h5>
+                    <textarea class="w-100" id="k8s-service" style="height: 300px"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <h5>Containers Manager</h5>
+                    <textarea class="w-100" id="containers-manager" style="height: 300px"></textarea>
+                </div>
+                <div class="col-3">
+                    <h5>Controller</h5>
+                    <textarea class="w-100" id="controller" style="height: 300px"></textarea>
+                </div>
+                <div class="col-3">
+                    <h5>Requests Store</h5>
+                    <textarea class="w-100" id="request-store" style="height: 300px"></textarea>
+                </div>
+                <div class="col-3">
+                    <h5>Dispatcher</h5>
+                    <textarea class="w-100" id="dispatcher" style="height: 300px"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+</script>
+<script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
+<script
+        src="https://unpkg.com/bootstrap-table@1.15.3/dist/extensions/auto-refresh/bootstrap-table-auto-refresh.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="main.js"></script>
+</body>
+
+</html>

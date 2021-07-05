@@ -1,0 +1,97 @@
+### Get the status
+GET http://{{host}}:{{port}}/
+Accept: application/json
+
+### Get the models
+GET http://{{host}}:{{port}}/models
+Accept: application/json
+
+### Get a model
+GET http://{{host}}:{{port}}/models/half_plus_two
+Accept: application/json
+
+### Get the models
+PATCH http://{{host}}:{{port}}/models
+Content-Type: application/json
+
+{
+  "model": "half_plus_two",
+  "sla": 0.3
+}
+
+### Get the containers for a model
+GET http://{{host}}:{{port}}/models/half-plus-two-ef56cad3-6fd5-47be-83bd-a36439d0d2ea/containers
+Accept: application/json
+
+### Get the models by node
+GET http://{{host}}:{{port}}/models/192.168.99.103
+Accept: application/json
+
+### Get the containers
+GET http://{{host}}:{{port}}/containers
+Accept: application/json
+
+### Update the container
+PATCH http://{{host}}:{{port}}/containers
+Content-Type: application/json
+
+{
+  "container_id": "500bdb68dbf1",
+  "cpu_quota": 300000
+}
+
+
+### Get the containers group by node
+GET http://{{host}}:{{port}}/node/containers
+Accept: application/json
+
+### Get the containers by node
+GET http://{{host}}:{{port}}/containers/192.168.99.103
+Accept: application/json
+
+### Post a model
+POST http://{{host}}:{{port}}/models
+Content-Type: application/json
+
+{
+  "model": "model_3",
+  "version": 1
+}
+
+### Post configuration
+POST http://{{host}}:{{port}}/configuration
+Content-Type: application/json
+
+{
+  "models": [
+    {
+      "name": "skyline_extraction",
+      "version": 1,
+      "sla": 0.3,
+      "alpha": 0.5,
+      "profiled_rt": 0.15
+    }
+  ],
+  "actuator_port": 5000,
+  "init_quota": 2,
+  "containers": [
+    {
+      "model": "skyline_extraction",
+      "version": 1,
+      "container": "nodemanager-rest-cpu-1",
+      "container_id": null,
+      "active": false,
+      "device": 0,
+      "node": "192.168.49.2",
+      "endpoint": "http://192.168.49.2:8501",
+      "port": 8501,
+      "quota": null
+    }
+  ]
+}
+
+### Get configuration
+GET http://{{host}}:{{port}}/configuration
+
+### Start the component
+POST http://{{host}}:{{port}}/start

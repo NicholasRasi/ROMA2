@@ -1,0 +1,8 @@
+flask
+PyYAML
+requests
+matplotlib
+numpy
+pillow
+opencv-python
+apscheduler

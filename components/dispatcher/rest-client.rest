@@ -1,0 +1,49 @@
+### Get the status
+GET http://{{host}}:{{port}}/
+Accept: application/json
+
+### Post a predict to "half_plus_two"
+POST http://{{host}}:{{port}}/predict/half-plus-two
+Content-Type: application/json
+
+{
+  "version": 1,
+  "instances": [1.0, 2.0, 3.0]
+}
+
+###
+POST http://{{host}}:{{port}}/predict/half_plus_three
+Content-Type: application/json
+
+{
+  "version": 1,
+  "instances": [1.0, 2.0, 3.0]
+}
+
+### Post a predict to "resnet_NHWC"
+POST http://{{host}}:{{port}}/predict/resnet
+Content-Type: application/json
+
+{
+  "version": 1,
+  "instances": [{"b64": "{{test_img}}"}]
+}
+
+### Post configuration
+POST http://{{host}}:{{port}}/configuration
+Content-Type: application/json
+
+{
+  "containers_manager": "http://localhost:5001",
+  "requests_store": "http://localhost:5002",
+  "verbose": 1,
+  "gpu_queues_policy": 2,
+  "cpu_queues_policy": 1,
+  "max_log_consumers": 1,
+  "max_polling_threads": 1,
+  "max_consumers_cpu": 100,
+  "max_consumers_gpu": 100
+}
+
+### Get configuration
+GET http://{{host}}:{{port}}/configuration
