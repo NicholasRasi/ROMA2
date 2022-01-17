@@ -72,16 +72,6 @@ Content-Type: application/json
       "alpha": 0.5,
       "profiled_rt": 0.15,
       "tfs_model_url": "https://github.com/NicholasRasi/TFServingModelHalfPlusTwo/archive/v1.tar.gz",
-      "required_cpus": 2,
-      "required_gpus": 0
-    },
-    {
-      "name": "skyline-extraction",
-      "version": 1,
-      "sla": 0.3,
-      "alpha": 0.5,
-      "profiled_rt": 0.15,
-      "tfs_model_url": "https://github.com/NicholasRasi/TFServingModelSkylineExtraction/archive/v1.tar.gz",
       "required_cpus": 1,
       "required_gpus": 0
     }

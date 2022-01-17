@@ -26,6 +26,10 @@ Accept: application/json
 GET http://{{host}}:{{port}}/metrics/container/model?from_ts=0
 Accept: application/json
 
+### Get the created requests by container by model
+GET http://{{host}}:{{port}}/metrics/container/model/created?from_ts=0
+Accept: application/json
+
 ### Post a request
 POST http://{{host}}:{{port}}/requests
 Content-Type: application/json
